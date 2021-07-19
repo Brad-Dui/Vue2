@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-16 21:37:27
+ * @LastEditTime: 2021-07-16 23:42:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue.js\02.模板\bind.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bind.css">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="bind">
+        <h1>插值语法</h1>
+        <h3>{{name}}</h3>
+        <h1>指令语法</h1>
+        <a v-bind:href="url">bilibili</a>
+        <h1>指令语法操作属性,属性内可以写对获取值的操作</h1>
+        <a v-bind:href="baidu.url">百度</a>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    var vm = new Vue({
+        el: '#bind',
+        data: {
+            name: '用{{}}传值',
+            url: 'https://www.bilibili.com/',
+            baidu: {
+                url: 'http://www.baidu.com',
+            }
+        }
+    })
+</script>
+
+</html>

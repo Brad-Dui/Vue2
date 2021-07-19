@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-16 23:56:30
+ * @LastEditTime: 2021-07-19 20:25:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue.js\04el和data\el-data.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root1">{{name}}</div>
+    <div id="root2">{{name}}</div>
+</body>
+<script>
+    Vue.config.productionTip = false;
+    let vm1 = new Vue({
+        el: '#root1',
+        data: {
+            name: '张三'
+        }
+    })
+    let vm2 = new Vue({
+        data() {
+            return {
+                name: '李四'
+            };
+        }
+    })
+    vm2.$mount('#root2');
+</script>
+<!--
+-- 1.能否将实例中的data方法解构赋值
+-- 2.或者能不能封装一个方法能给data添加值
+-->
+
+</html>

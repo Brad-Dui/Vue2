@@ -1,0 +1,82 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-15 22:25:48
+ * @LastEditTime: 2021-07-17 01:11:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue.js\Vue入门\vueStat.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #students {
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: larger;
+            font-weight: 200;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="students">
+        <h1>{{message}}</h1>
+        <br>
+        <ul>
+            <li>姓名：{{stu0}} 学号：{{num0}}</li>
+            <li>姓名：{{stu1}} 学号：{{num1}}</li>
+            <li>姓名：{{stu2}} 学号：{{num2}}</li>
+            <li>姓名：{{stu3}} 学号：{{num3}}</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    Vue.config.productionTip = false;
+    // Vue.config.devtools = true;
+    var vm = new Vue({
+        el: '#students',
+        data: {
+            message: 'Hello Vue!',
+            stu0: '张三',
+            num0: '123',
+            stu1: '李四',
+            num1: '456',
+            stu2: '王二',
+            num2: '789',
+            stu3: '麻子',
+            num3: '159',
+        }
+    });
+</script>
+<!-- 
+    /**
+ * 1.能否简化vm.data属性的数量-姓名和学号归类？
+ * 2.批量修改或增加学生的信息
+ * 3.批量增加或删除学生
+ * 4.遍历学生的所有信息或者某一信息
+ * 5.获取学生某一项信息然后进行排序
+ */
+ -->
+
+</html>
