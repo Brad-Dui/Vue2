@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-19 20:46:02
- * @LastEditTime: 2021-07-19 23:32:05
+ * @LastEditTime: 2021-07-20 20:05:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Vue.js\Vue入门\05数据代理\dataAgent.js
@@ -39,6 +39,28 @@ console.log(json)
 /**
  * 数据代理
  */
+//通过obj2修改obj1的x值
+//直接修改obj1的值 obj2中代理的值也会改变
 let obj1 = { x: 100 };
-let obj2 = { y: 100 };
-Object.defineProperty()
+let obj2 = { y: 200 };
+Object.defineProperty(obj2, 'x', {
+    get() {
+        return obj1.x;
+    },
+    set(value) {//value可以是obj1.x也可以是obj2.x更改的值
+        obj1.x = value;
+    }
+})
+/**
+ * Vue中的数据代理
+ * 通过vm对象修改data的值
+ * 用Object.defineProperty()给vm添加data中的值
+ * 通过修改vm中的值可以同时修改data中的值 渲染到页面
+ */
+const vm = new Vue({
+    el: '#root',
+    data: {
+        name: '小张',
+        age: 18
+    }
+})
